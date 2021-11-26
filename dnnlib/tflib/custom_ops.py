@@ -40,11 +40,11 @@ def _find_compiler_bindir():
     return None
 
 def _get_compute_cap(device):
-    caps_str = device.physical_device_desc
-    m = re.search('compute capability: (\\d+).(\\d+)', caps_str)
-    major = m.group(1)
-    minor = m.group(2)
-    return (major, minor)
+    #caps_str = device.physical_device_desc
+    #m = re.search('compute capability: (\\d+).(\\d+)', caps_str)
+    #major = m.group(1)
+    #minor = m.group(2)
+    return (8, 6)
 
 def _get_cuda_gpu_arch_string():
     gpus = [x for x in device_lib.list_local_devices() if x.device_type == 'GPU']
